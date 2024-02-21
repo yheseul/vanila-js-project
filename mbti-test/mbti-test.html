@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./mbti-test.css">
+  <title>MBTI Test</title>
+</head>
+<body> 
+  <form id="mainForm">
+    <legend id="subject"><초간단 MBTI TEST></legend>
+    <progress id="progress-Bar" max="100" value="0">0%</progress>
+    <h4 id="question">Q. 문제가 생겼을 때 당신의 대처법은?</h4>
+
+    <div class="question">
+      <div class="leftQuestion">
+        <input type="checkbox" name="checkbox1" onclick="clickCheck1(this); getCheckedCount()" id="extroversion"/>
+        <label for="E">E 말이 많아짐</label>
+      </div>
+      <div id="vs1">VS</div>
+      <div class="rightQuestion">
+        <label for="I">I 생각이 많아짐</label>
+        <input type="checkbox" name="checkbox1" onclick="clickCheck1(this); getCheckedCount()" id="
+        introversion"/>
+      </div>
+    </div>
+    <div class="question">
+      <div class="leftQuestion">
+        <input type="checkbox" name="checkbox2" onclick="clickCheck2(this); getCheckedCount()" id="sensing"/>
+        <label for="S">S 그럴 수 있지</label>
+      </div>
+      <div id="vs2">VS</div>
+      <div class="rightQuestion">
+        <label for="N">N 어떻게 그럴 수 있지</label>
+        <input type="checkbox" name="checkbox2" onclick="clickCheck2(this); getCheckedCount()" id="
+        intuition"/>
+      </div>
+    </div>
+    <div class="question">
+      <div class="leftQuestion">
+        <input type="checkbox" name="checkbox3" onclick="clickCheck3(this); getCheckedCount()" id="feeling"/>
+        <label for="F">F 선 공감 후 이해</label>
+      </div>
+      <div id="vs3">VS</div>
+      <div class="rightQuestion">
+        <label for="T">T 이해가 돼야 공감을 하든 말든</label>
+        <input type="checkbox" name="checkbox3" onclick="clickCheck3(this); getCheckedCount()" id="
+        thinking"/>
+      </div>
+    </div>
+    <div class="question">
+      <div class="leftQuestion">
+        <input type="checkbox" name="checkbox4" onclick="clickCheck4(this); getCheckedCount()" id="judging"/>
+        <label for="J">J 바로 처리함</label>
+      </div>
+      <div id="vs4">VS</div>
+      <div class="rightQuestion">
+        <label for="P">P 닥쳐서 처리함</label>
+        <input type="checkbox" name="checkbox4" onclick="clickCheck4(this); getCheckedCount()" id="
+        perceiving"/>
+      </div>
+    </div>
+    <button id="button">모든 항목을 체크해 주세요!</button>
+  </form>
+  <script src="./mbti-test.js"></script>
+</body>
+</html>
