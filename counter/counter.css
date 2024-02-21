@@ -1,0 +1,27 @@
+body{
+  margin: 0 auto;
+  width: 300px;
+  padding : 150px 0;
+}
+#title{
+  text-align: center;
+  font-size: 70px;
+}
+#number{
+  text-align: center;
+  font-size: 100px;
+  padding-bottom: 50px;
+  color: red;
+}
+#button{
+  text-align: center;
+}
+#decrease{
+  cursor: pointer;
+}
+#reset{
+  cursor: pointer;
+}
+#increase{
+  cursor: pointer;
+}
