@@ -31,10 +31,12 @@ checkboxes4.forEach((checkbox) => {
     oneCheck(checkbox, checkboxes4);
   });
 });
-function getCheckedCount(){
-  const selctedCheckboxes=document.querySelectorAll('input:checked');
-  const selctedCheckboxesCount=selctedCheckboxes.length;
-  if(selctedCheckboxesCount === 4){
-    submitButton.innerText="나의 MBTI 확인하기!";
-  }
-}
+input.forEach((event)=>{
+  event.addEventListener("click",()=>{
+    const selctedCheckboxes=document.querySelectorAll('input:checked');
+    const selctedCheckboxesCount=selctedCheckboxes.length;
+    if(selctedCheckboxesCount === 4){
+      submitButton.innerText="나의 MBTI 확인하기!";
+    }
+  })
+})
