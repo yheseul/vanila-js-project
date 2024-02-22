@@ -1,25 +1,36 @@
-const checkboxes1=document.getElementsByName("checkbox1");
-const checkboxes2=document.getElementsByName("checkbox2");
-const checkboxes3=document.getElementsByName("checkbox3");
-const checkboxes4=document.getElementsByName("checkbox4");
+const checkboxes1=document.querySelectorAll(".checkbox1");
+const checkboxes2=document.querySelectorAll(".checkbox2");
+const checkboxes3=document.querySelectorAll(".checkbox3");
+const checkboxes4=document.querySelectorAll(".checkbox4");
 const submitButton=document.getElementById("button");
+const input=document.querySelectorAll("input");
 
-function clickCheck1(target){
-  checkboxes1.forEach((checkbox)=>{checkbox.checked=false;})
-  target.checked=true;
+function oneCheck(target, checkboxes) {
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+  target.checked = true;
 }
-function clickCheck2(target){
-  checkboxes2.forEach((checkbox)=>{checkbox.checked=false;})
-  target.checked=true;
-}
-function clickCheck3(target){
-  checkboxes3.forEach((checkbox)=>{checkbox.checked=false;})
-  target.checked=true;
-}
-function clickCheck4(target){
-  checkboxes4.forEach((checkbox)=>{checkbox.checked=false;})
-  target.checked=true;
-}
+checkboxes1.forEach((checkbox) => {
+  checkbox.addEventListener('click', function () {
+    oneCheck(checkbox, checkboxes1);
+  });
+});
+checkboxes2.forEach((checkbox) => {
+  checkbox.addEventListener('click', function () {
+    oneCheck(checkbox, checkboxes2);
+  });
+});
+checkboxes3.forEach((checkbox) => {
+  checkbox.addEventListener('click', function () {
+    oneCheck(checkbox, checkboxes3);
+  });
+});
+checkboxes4.forEach((checkbox) => {
+  checkbox.addEventListener('click', function () {
+    oneCheck(checkbox, checkboxes4);
+  });
+});
 function getCheckedCount(){
   const selctedCheckboxes=document.querySelectorAll('input:checked');
   const selctedCheckboxesCount=selctedCheckboxes.length;
