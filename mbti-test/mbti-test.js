@@ -31,6 +31,7 @@ checkboxes4.forEach((checkbox) => {
     oneCheck(checkbox, checkboxes4);
   });
 });
+
 input.forEach((event)=>{
   event.addEventListener("click",()=>{
     const selctedCheckboxes=document.querySelectorAll('input:checked');
@@ -40,3 +41,12 @@ input.forEach((event)=>{
     }
   })
 })
+
+  submitButton.addEventListener("click",()=>{
+    const selctedCheckboxes=document.querySelectorAll('input:checked');
+    result ="";
+    selctedCheckboxes.forEach((el)=>{
+      result += el.value;
+    })
+    alert(`당신의 MBTI 유형은 ${result}입니다.`)
+  })
