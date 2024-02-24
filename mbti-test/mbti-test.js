@@ -9,12 +9,12 @@ const submitButton = document.getElementById("button");
 
 submitButton.disabled = true;
 
-selectSingleCheckbox=(target, checkboxes)=>{
+selectSingleCheckbox = (target, checkboxes) => {
   checkboxes.forEach((checkbox) => checkbox.checked = false);
   target.checked = true;
 }
 
-attachExclusiveCheck=(checkboxes)=>{
+attachExclusiveCheck = (checkboxes) => {
   checkboxes.forEach((checkbox) => {
     checkbox.addEventListener('click', () => selectSingleCheckbox(checkbox, checkboxes));
   });
@@ -25,18 +25,35 @@ attachExclusiveCheck(checkboxes2);
 attachExclusiveCheck(checkboxes3);
 attachExclusiveCheck(checkboxes4);
 
-input.forEach((event) => {
-  event.addEventListener("click", () => {
-    const selctedCheckboxes = document.querySelectorAll('input:checked');
-    const selctedCheckboxesCount = selctedCheckboxes.length;
-    const questionsCount = questions.length;
-    if(selctedCheckboxesCount > 0) progressBar.value = 100 * (selctedCheckboxesCount/questionsCount);
-    if(selctedCheckboxesCount === 4){
-      submitButton.innerText = "나의 MBTI 확인하기!";
-      submitButton.disabled = false;
-    }
-  })
-})
+// 체크박스 클릭 이벤트 핸들러
+handleCheckboxClick = () => {
+  const selectedCheckboxes = document.querySelectorAll('input:checked');
+  const selectedCheckboxesCount = selectedCheckboxes.length;
+  const totalQuestionsCount = questions.length;
+
+  updateProgressBar(selectedCheckboxesCount, totalQuestionsCount);
+
+  if (selectedCheckboxesCount === totalQuestionsCount) {
+    enableSubmitButton();
+  }
+};
+
+// 프로그레스 바 업데이트 함수
+updateProgressBar = (checkedCount, totalCount) => {
+  const progressPercentage = (checkedCount / totalCount) * 100;
+  progressBar.value = progressPercentage;
+};
+
+// 제출 버튼 활성화 함수
+enableSubmitButton = () => {
+  submitButton.innerText = "나의 MBTI 확인하기!";
+  submitButton.disabled = false;
+};
+
+// 각 체크박스에 이벤트 리스너 등록
+input.forEach((checkbox) => {
+  checkbox.addEventListener("click", handleCheckboxClick);
+});
 
 submitButton.addEventListener("click", () => {
   result = "";
