@@ -14,26 +14,18 @@ function oneCheck(target, checkboxes) {
   });
   target.checked = true;
 }
-checkboxes1.forEach((checkbox) => {
-  checkbox.addEventListener('click', function () {
-    oneCheck(checkbox, checkboxes1);
+function unduplicatedCheck(checkboxes){
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('click', function () {
+      oneCheck(checkbox, checkboxes);
+    });
   });
-});
-checkboxes2.forEach((checkbox) => {
-  checkbox.addEventListener('click', function () {
-    oneCheck(checkbox, checkboxes2);
-  });
-});
-checkboxes3.forEach((checkbox) => {
-  checkbox.addEventListener('click', function () {
-    oneCheck(checkbox, checkboxes3);
-  });
-});
-checkboxes4.forEach((checkbox) => {
-  checkbox.addEventListener('click', function () {
-    oneCheck(checkbox, checkboxes4);
-  });
-});
+}
+
+unduplicatedCheck(checkboxes1);
+unduplicatedCheck(checkboxes2);
+unduplicatedCheck(checkboxes3);
+unduplicatedCheck(checkboxes4);
 
 input.forEach((event)=>{
     let count=0;
@@ -57,3 +49,4 @@ submitButton.addEventListener("click",()=>{
     })
     alert(`당신의 MBTI 유형은 ${result}입니다.`)
   })
+
