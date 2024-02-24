@@ -58,7 +58,7 @@ input.forEach((checkbox) => {
 // 테스트 결과 출력 기능
 testResult = (checkedList) => {
   resultMessage = "";
-  checkedList.forEach((el) => result += el.value);
+  checkedList.forEach((el) => resultMessage += el.value);
   alert(`당신의 MBTI 유형은 ${resultMessage}입니다.`);
 }
 
