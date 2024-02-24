@@ -7,6 +7,8 @@ const progressBar=document.getElementById("progress-Bar");
 const questions=document.querySelectorAll(".question");
 const submitButton=document.getElementById("button");
 
+submitButton.disabled = true;
+
 oneCheck=(target, checkboxes)=>{
   checkboxes.forEach((checkbox) => checkbox.checked = false);
   target.checked = true;
@@ -29,7 +31,10 @@ input.forEach((event)=>{
     const selctedCheckboxesCount=selctedCheckboxes.length;
     const questionsCount=questions.length;
     if(selctedCheckboxesCount>0) progressBar.value=100*(selctedCheckboxesCount/questionsCount);
-    if(selctedCheckboxesCount === 4) submitButton.innerText="나의 MBTI 확인하기!";
+    if(selctedCheckboxesCount === 4){
+      submitButton.innerText="나의 MBTI 확인하기!";
+      submitButton.disabled = false;
+    }
   })
 })
 
@@ -39,4 +44,3 @@ submitButton.addEventListener("click",()=>{
   selctedCheckboxes.forEach((el)=>result += el.value);
   alert(`당신의 MBTI 유형은 ${result}입니다.`);
 })
-
