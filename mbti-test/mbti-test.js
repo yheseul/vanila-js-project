@@ -55,9 +55,15 @@ input.forEach((checkbox) => {
   checkbox.addEventListener("click", handleCheckboxClick);
 });
 
+// 테스트 결과 출력 기능
+testResult = (checkedList) => {
+  resultMessage = "";
+  checkedList.forEach((el) => result += el.value);
+  alert(`당신의 MBTI 유형은 ${resultMessage}입니다.`);
+}
+
+// 테스트 결과 함수를 호출하는 제출 버튼 클릭 이벤트 리스너
 submitButton.addEventListener("click", () => {
-  result = "";
   const selctedCheckboxes = document.querySelectorAll('input:checked');
-  selctedCheckboxes.forEach((el) => result += el.value);
-  alert(`당신의 MBTI 유형은 ${result}입니다.`);
+  testResult(selctedCheckboxes);
 })
