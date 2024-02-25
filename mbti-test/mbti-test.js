@@ -1,29 +1,40 @@
-const checkboxes1 = document.querySelectorAll(".checkbox1");
-const checkboxes2 = document.querySelectorAll(".checkbox2");
-const checkboxes3 = document.querySelectorAll(".checkbox3");
-const checkboxes4 = document.querySelectorAll(".checkbox4");
 const input = document.querySelectorAll("input");
 const progressBar = document.getElementById("progress-Bar");
 const questions = document.querySelectorAll(".question");
 const submitButton = document.getElementById("button");
 
+// 제출 버튼 비활성화(기본값)
 submitButton.disabled = true;
 
+// 중복 체크 불가 함수
 selectSingleCheckbox = (target, checkboxes) => {
   checkboxes.forEach((checkbox) => checkbox.checked = false);
   target.checked = true;
 }
 
+// 각 체크박스 그룹 요소에 이벤트 리스너 등록
 attachExclusiveCheck = (checkboxes) => {
   checkboxes.forEach((checkbox) => {
     checkbox.addEventListener('click', () => selectSingleCheckbox(checkbox, checkboxes));
   });
 }
 
-attachExclusiveCheck(checkboxes1);
-attachExclusiveCheck(checkboxes2);
-attachExclusiveCheck(checkboxes3);
-attachExclusiveCheck(checkboxes4);
+// 그룹화된 체크박스 불러오는 함수
+generateCheckboxes = () => {
+  const checkboxGroups = [];
+  for (let i = 1; i <= questions.length; i++) {
+    checkboxGroups.push(document.querySelectorAll(`input[name="checkbox${i}"]`));
+  }
+  return checkboxGroups;
+}
+
+// 불러온 체크박스 그룹을 모두 담은 배열로 이루어진 변수
+const allCheckboxGroups = generateCheckboxes();
+
+// 체크박스 그룹별로 클릭 이벤트 발생하는 함수 호출
+allCheckboxGroups.forEach((checkboxes) => {
+  attachExclusiveCheck(checkboxes);
+})
 
 // 체크박스 클릭 이벤트 핸들러
 handleCheckboxClick = () => {
@@ -67,3 +78,4 @@ submitButton.addEventListener("click", () => {
   const selctedCheckboxes = document.querySelectorAll('input:checked');
   testResult(selctedCheckboxes);
 })
+
