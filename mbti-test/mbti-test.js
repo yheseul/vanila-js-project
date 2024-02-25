@@ -43,16 +43,14 @@ handleCheckboxClick = () => {
   const totalQuestionsCount = questions.length;
 
   updateProgressBar(selectedCheckboxesCount, totalQuestionsCount);
-
-  if (selectedCheckboxesCount === totalQuestionsCount) {
-    enableSubmitButton();
-  }
 };
 
 // 프로그레스 바 업데이트 함수
 updateProgressBar = (checkedCount, totalCount) => {
   const progressPercentage = (checkedCount / totalCount) * 100;
   progressBar.value = progressPercentage;
+
+  if(progressPercentage == 100) enableSubmitButton();
 };
 
 // 제출 버튼 활성화 함수
@@ -78,4 +76,3 @@ submitButton.addEventListener("click", () => {
   const selctedCheckboxes = document.querySelectorAll('input:checked');
   testResult(selctedCheckboxes);
 })
-
