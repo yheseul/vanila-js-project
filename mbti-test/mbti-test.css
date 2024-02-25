@@ -21,39 +21,28 @@ body{
   font-size: 40px;
   color: rgb(0, 0, 0);
 }
-.question{
-  display: flex;
+table{
+  width: 100%;
 }
-#vs1{
-  font-size: 35px;
-  padding: 0 0 0 160px;
+.vs{
+  font-size: 25px;
   color: gray;
-}
-#vs2{
-  font-size: 35px;
-  padding: 0 0 0 156px;
-  color: gray;
-}
-#vs3{
-  font-size: 35px;
-  padding: 0 0 0 134px;
-  color: gray;
-}
-#vs4{
-  font-size: 35px;
-  padding: 0 0 0 164px;
-  color: gray;
+  text-align: center;
+  width: 20%;
 }
 .leftQuestion{
   padding-top: 7px;
   color: rgb(246, 23, 23);
-  font-size: 20px;
+  font-size: 19px;
+  width: 40%;
 }
 .rightQuestion{
   padding-top: 7px;
   color: rgb(54, 54, 248);
-  font-size: 20px;
+  font-size: 19px;
   margin: 0 0 0 auto;
+  text-align: right;
+  width: 40%;
 }
 #button{
   margin: 20px 0 0 175px;
