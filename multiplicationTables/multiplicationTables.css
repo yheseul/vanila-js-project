@@ -1,0 +1,39 @@
+body{
+  font-family: arial;
+  margin: 150px auto;
+  width: 300px;
+  height: 150px;
+  outline: dashed 1px black;
+  text-align: center;
+  padding: 30px;
+}
+#subject{
+  font-size: 24px;
+}
+#questionBox{
+  margin-top: 15px;
+}
+#question{
+  width: 190px;
+  height: 25px;
+  float: left;
+  text-align: center;
+}
+#anotherProblem{
+  margin: 2.5px;
+  float: left;
+}
+#answer{
+  margin-top: 60px;
+}
+#result{
+  text-align: left;
+}
+#correctQuestion{
+  float: left;
+  width: 150px;
+}
+#wrongQuestion{
+  float: left;
+  width: 150px;
+}
