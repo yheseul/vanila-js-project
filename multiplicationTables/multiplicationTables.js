@@ -20,7 +20,7 @@ creatingMultiplicationProblem = () => {
 
 creatingMultiplicationProblem();
 
-// 제출 버튼 클릭 이벤트 핸들러
+// 문제 정답 제출 이벤트 핸들러
 handleSubmitButtonClick = () => {
   const answerQuestion = leftOperand * rigthOperand;
   const answerEnteredUser = $input.value;
@@ -34,5 +34,8 @@ checkAnswerQuestion = (answerQuestion, answerEnteredUser) => {
   if(answerQuestion == answerEnteredUser) alert('정답입니다.');
 }
 
-// 제출 버튼에 이벤트 리스너 등록
-submitButton.addEventListener("click", handleSubmitButtonClick);
+// 문제 정답 제출 이벤트 리스너 복수 등록
+$submitButton.addEventListener("click", handleSubmitButtonClick);
+$input.addEventListener("keypress", (event) => {
+  if(event.key === 'Enter') handleSubmitButtonClick();
+});
