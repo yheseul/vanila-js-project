@@ -46,9 +46,17 @@ body{
 }
 #correctQuestion{
   float: left;
-  width: 150px;
+  width: 100px;
+}
+#correctQuestionCount{
+  float: left;
+  width: 50px;
 }
 #wrongQuestion{
   float: left;
-  width: 150px;
+  width: 100px;
+}
+#wrongQuestionCount{
+  float: left;
+  width: 50px;
 }
