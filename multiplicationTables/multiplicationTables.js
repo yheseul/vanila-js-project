@@ -53,8 +53,10 @@ checkAnswerQuestion = (answerQuestion, answerEnteredUser) => {
   }
 }
 
-// 문제 정답 제출 이벤트 리스너 복수 등록
+// 제출 버튼 클릭 이벤트 리스너 등록
 $submitButton.addEventListener("click", handleSubmitButtonClick);
+
+// 입력창 엔터키 이벤트 리스너 등록
 $input.addEventListener("keypress", (event) => {
   if(event.key === 'Enter') handleSubmitButtonClick();
 });

@@ -42,7 +42,8 @@ body{
   margin-top: 60px;
 }
 #result{
-  text-align: left;
+  margin-top: 30px;
+  text-align: center;
 }
 #correctQuestion{
   float: left;
