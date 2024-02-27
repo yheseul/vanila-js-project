@@ -1,4 +1,6 @@
 const $question = document.getElementById('question');
+const $leftOperand = document.getElementById('leftOperand');
+const $rigthOperand = document.getElementById('rigthOperand');
 
 // 랜덤 숫자 생성
 randomNumberGeneration = () => {
@@ -7,7 +9,8 @@ randomNumberGeneration = () => {
 
 // 구구단 문제 생성
 creatingMultiplicationProblem = () => {
-  $question.innerHTML = `${randomNumberGeneration()} X ${randomNumberGeneration()}`;
+  $leftOperand.innerHTML = `${randomNumberGeneration()}`;
+  $rigthOperand.innerHTML = `${randomNumberGeneration()}`;
 }
 
 creatingMultiplicationProblem();
