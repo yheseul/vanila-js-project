@@ -32,7 +32,9 @@ creatingMultiplicationProblem = () => {
 creatingMultiplicationProblem()
 
 // 문제 정답 제출 이벤트 핸들러
-handleSubmitButtonClick = () => {
+handleSubmitButtonClick = (event) => {
+  event.preventDefault();
+
   const answerQuestion = leftOperand * rigthOperand;
   const answerEnteredUser = $input.value;
 
@@ -68,5 +70,5 @@ $submitButton.addEventListener("click", handleSubmitButtonClick);
 
 // 입력창 엔터키 이벤트 리스너 등록
 $input.addEventListener("keypress", (event) => {
-  if(event.key === 'Enter') handleSubmitButtonClick();
+  if(event.key === 'Enter') handleSubmitButtonClick(event);
 });
