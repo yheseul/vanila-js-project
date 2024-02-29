@@ -39,6 +39,7 @@ handleSubmitButtonClick = (event) => {
   const answerEnteredUser = $input.value;
 
   checkAnswerQuestionMessage(answerQuestion, answerEnteredUser);
+  $input.value = '';
 }
 
 // 문제 정답 결과 메세지 출력
