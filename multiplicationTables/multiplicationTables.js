@@ -67,7 +67,9 @@ numberQuestionsMatched = () => {
 }
 
 // 다른 문제 풀기 버튼 클릭 시 새로운 문제로 업데이트
-askDifferentQuestion = () => {
+askDifferentQuestion = (event) => {
+  event.preventDefault();
+
   // 새로운 랜덤 숫자 생성
   const [newLeftOperand, newRigthOperand] = randomNumber();
 
