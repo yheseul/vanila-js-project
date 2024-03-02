@@ -24,12 +24,12 @@ randomNumber = () => {
 const [leftOperand, rigthOperand] = randomNumber();
 
 // 구구단 문제 생성
-creatingMultiplicationProblem = () => {
+creatingMultiplicationProblem = (leftOperand, rigthOperand) => {
   $leftOperand.innerHTML = leftOperand;
   $rigthOperand.innerHTML = rigthOperand;
 }
 
-creatingMultiplicationProblem()
+creatingMultiplicationProblem(leftOperand, rigthOperand);
 
 // 문제 정답 제출 이벤트 핸들러
 handleSubmitButtonClick = (event) => {
@@ -65,6 +65,18 @@ numberQuestionsMatched = () => {
   const currentCorrectQuestionCount=parseInt($correctQuestionCount.innerText, 10);
   $correctQuestionCount.innerHTML = currentCorrectQuestionCount + 1;
 }
+
+// 다른 문제 풀기 버튼 클릭 시 새로운 문제로 업데이트
+askDifferentQuestion = () => {
+  // 새로운 랜덤 숫자 생성
+  const [newLeftOperand, newRigthOperand] = randomNumber();
+
+  // 생성된 새로운 숫자를 사용하여 문제 업데이트
+  creatingMultiplicationProblem(newLeftOperand, newRigthOperand);
+}
+
+// 다른 문제 풀기 버튼 클릭 이벤트 리스너 등록
+$solvingOtherProblemsButton.addEventListener("click", askDifferentQuestion);
 
 // 제출 버튼 클릭 이벤트 리스너 등록
 $submitButton.addEventListener("click", handleSubmitButtonClick);
