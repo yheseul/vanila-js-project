@@ -37,21 +37,31 @@ handleSubmitButtonClick = (event) => {
   const answerQuestion = leftOperand * rigthOperand;
   const answerEnteredUser = $input.value;
 
-  checkAnswerQuestionMessage(answerQuestion, answerEnteredUser);
+  checkAnswerQuestion(answerQuestion, answerEnteredUser);
   $input.value = '';
 }
 
-// 문제 정답 결과 메세지 출력
-checkAnswerQuestionMessage = (answerQuestion, answerEnteredUser) => {
+// 문제 답 확인
+checkAnswerQuestion = (answerQuestion, answerEnteredUser) => {
   if(answerQuestion != answerEnteredUser) {
-    alert('틀렸습니다.');
+    wrongAnswerMessage();
     numberQuestionsIncorrect();
   }
   if(answerQuestion == answerEnteredUser) {
-    alert('정답입니다.');
-    randomNumber();
+    answerMessage();
     numberQuestionsMatched();
+    randomNumber();
   }
+}
+
+// 오답 메세지
+wrongAnswerMessage = () => {
+  alert('틀렸습니다.');
+}
+
+// 정답 메세지
+answerMessage = () => {
+  alert('정답입니다.');
 }
 
 // 틀린 문제 개수
