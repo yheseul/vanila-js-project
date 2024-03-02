@@ -49,6 +49,7 @@ checkAnswerQuestionMessage = (answerQuestion, answerEnteredUser) => {
   }
   if(answerQuestion == answerEnteredUser) {
     alert('정답입니다.');
+    randomNumber();
     numberQuestionsMatched();
   }
 }
@@ -68,7 +69,7 @@ numberQuestionsMatched = () => {
 // 다른 문제 풀기 버튼 클릭 시 새로운 문제로 업데이트
 askDifferentQuestion = (event) => {
   event.preventDefault();
-  randomNumber()
+  randomNumber();
 }
 
 // 다른 문제 풀기 버튼 클릭 이벤트 리스너 등록
