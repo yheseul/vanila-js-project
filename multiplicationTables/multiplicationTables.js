@@ -12,29 +12,28 @@ randomNumberGeneration = () => {
   return Math.floor(Math.random() * 10) + 1;
 }
 
-// 랜덤 숫자
+// 구구단 문제 생성
 randomNumber = () => {
   const leftOperand = randomNumberGeneration();
   const rigthOperand = randomNumberGeneration();
 
-  return [leftOperand, rigthOperand];
+  creatingMultiplicationProblem(leftOperand, rigthOperand);
 }
 
-// 생성된 랜덤 숫자를 담은 배열 디스트럭처링 할당
-const [leftOperand, rigthOperand] = randomNumber();
-
-// 구구단 문제 생성
+// 구구단 문제 화면에 출력
 creatingMultiplicationProblem = (leftOperand, rigthOperand) => {
   $leftOperand.innerHTML = leftOperand;
   $rigthOperand.innerHTML = rigthOperand;
 }
 
-creatingMultiplicationProblem(leftOperand, rigthOperand);
+randomNumber();
 
 // 문제 정답 제출 이벤트 핸들러
 handleSubmitButtonClick = (event) => {
   event.preventDefault();
 
+  const leftOperand = $leftOperand.innerHTML;
+  const rigthOperand = $rigthOperand.innerHTML;
   const answerQuestion = leftOperand * rigthOperand;
   const answerEnteredUser = $input.value;
 
@@ -69,12 +68,7 @@ numberQuestionsMatched = () => {
 // 다른 문제 풀기 버튼 클릭 시 새로운 문제로 업데이트
 askDifferentQuestion = (event) => {
   event.preventDefault();
-
-  // 새로운 랜덤 숫자 생성
-  const [newLeftOperand, newRigthOperand] = randomNumber();
-
-  // 생성된 새로운 숫자를 사용하여 문제 업데이트
-  creatingMultiplicationProblem(newLeftOperand, newRigthOperand);
+  randomNumber()
 }
 
 // 다른 문제 풀기 버튼 클릭 이벤트 리스너 등록
