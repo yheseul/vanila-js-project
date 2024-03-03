@@ -40,12 +40,12 @@ handleSubmitButtonClick = (event) => {
 checkAnswerQuestion = (answerQuestion, answerEnteredUser) => {
   if(answerQuestion != answerEnteredUser) {
     wrongAnswerMessage();
-    increaseWrongQuestionCount();
+    numberIncorrectAnswers();
   }
   
   if(answerQuestion == answerEnteredUser) {
     answerMessage();
-    decreaseCorrectQuestionCount();
+    numberCorrectAnswers();
     randomNumber();
   }
 }
@@ -58,12 +58,12 @@ answerMessage = () => {
   alert('정답입니다.');
 }
 
-increaseWrongQuestionCount = () => {
+numberIncorrectAnswers = () => {
   const currentWrongQuestionCount=parseInt($wrongQuestionCount.innerText, 10);
   $wrongQuestionCount.innerHTML = currentWrongQuestionCount + 1;
 }
 
-decreaseCorrectQuestionCount = () => {
+numberCorrectAnswers = () => {
   const currentCorrectQuestionCount=parseInt($correctQuestionCount.innerText, 10);
   $correctQuestionCount.innerHTML = currentCorrectQuestionCount + 1;
 }
