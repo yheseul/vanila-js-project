@@ -1,0 +1,25 @@
+table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 400px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  font-weight: bolder;
+  font-size: 45px;
+}
+td {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+#allClear {
+  background-color: pink;
+}
+.number {
+  background-color: rgb(180, 228, 246);
+}
+.operation {
+  background-color: rgba(173, 247, 179, 0.73);
+}
