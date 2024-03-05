@@ -1,0 +1,49 @@
+body{
+  font-family: arial;
+  margin: 150px auto;
+  width: 500px;
+  text-align: center;
+  padding: 30px;
+}
+#subject{
+  font-size: 40px;
+}
+#selectAll{
+  margin-top: 12px;
+  cursor: pointer;
+}
+#toDoInput{
+  width: 400px;
+}
+#addButton{
+  cursor: pointer;
+}
+#remainingDoBox{
+  float: left;
+}
+#remainingDoCount{
+  float: left;
+  margin-right: 2px;
+}
+#remainingDo{
+  float: left;
+}
+#everythingToDo{
+  float: center;
+  cursor: pointer;
+}
+#uncompletedToDo{
+  float: center;
+  margin-right: 2px;
+  cursor: pointer;
+}
+#completedToDo{
+  float: center;
+  margin-right: 2px;
+  cursor: pointer;
+}
+#DeleteCompletedToDo{
+  float: right;
+  margin-right: 2px;
+  cursor: pointer;
+}
