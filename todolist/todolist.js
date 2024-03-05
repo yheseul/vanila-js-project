@@ -1,6 +1,7 @@
 const $toDoInput = document.getElementById('toDoInput');
 const $addButton = document.getElementById('addButton');
 const $toDoList = document.getElementById('toDoList');
+const $remainingDoCount = document.getElementById('remainingDoCount');
 
 addToDoList = (event) => {
   event.preventDefault();
@@ -11,8 +12,15 @@ addToDoList = (event) => {
   const creatingInputValueTextNode = document.createTextNode(newToDo);
   liElement.appendChild(creatingInputValueTextNode);
   $toDoList.appendChild(liElement);
+  
+  increasedRemainingDoCount();
 
   $toDoInput.value = " ";
+}
+
+increasedRemainingDoCount = () =>{
+  const CurrentRemainingDoCount = parseInt($remainingDoCount.innerHTML, 10);
+  $remainingDoCount.innerHTML = CurrentRemainingDoCount + 1;
 }
 
 $addButton.addEventListener('click', addToDoList);
