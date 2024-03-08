@@ -5,22 +5,28 @@ const $remainingDoCount = document.getElementById('remainingDoCount');
 
 addToDoList = (event) => {
   event.preventDefault();
-
   createToDoList();
-  increasedRemainingDoCount();
-
   $toDoInput.value = "";
 }
 
 createToDoList = () => {
+  const liElement = document.createElement("li");
   const newToDo = $toDoInput.value;
-  const liElement = document.createElement('li');
+  const todoCheckbox = document.createElement('input');
 
   liElement.style.listStyle = "none";
+  todoCheckbox.setAttribute("type", "checkbox");
+  liElement.className = "newToDoList";
+  todoCheckbox.className = "todoCheckbox";
 
-  const creatingInputValueTextNode = document.createTextNode(newToDo);
-  liElement.appendChild(creatingInputValueTextNode);
-  $toDoList.appendChild(liElement);
+  if(!newToDo){
+    alert("Please enter the content!");
+  }
+  else{
+    liElement.append(todoCheckbox, newToDo);
+    $toDoList.appendChild(liElement);
+    increasedRemainingDoCount();
+  }
 }
 
 increasedRemainingDoCount = () => {
