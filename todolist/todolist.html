@@ -9,20 +9,15 @@
 <body>
   <form id="mainform">
     <legend id="subject">TO DO LIST</legend>
-    <button type="button" id="selectAll">✅</button>
+    <button type="button" id="selectAll">v</button>
     <input type="text" id="toDoInput" placeholder="Please enter what you nee to do."/>
     <button type="submit" id="addButton">+</button>
-    <ul id="toDoList"></ul>
-    <div id="footer">
+    <button type="button" id="DeleteButton">-</button>
+    <div id="toDoList"></div>
       <div id="remainingDoBox">
-        <div id="remainingDoCount">0</div>
-        <div id="remainingDo">items left</div>
+        <span id="remainingDoCount">0</span>
+        <span id="remainingDo">items left</span>
       </div>
-      <button type="button" id="everythingToDo">All</button>
-      <button type="button" id="uncompletedToDo">Active</button>
-      <button type="button" id="completedToDo">Completed</button>
-      <button type="button" id="DeleteCompletedToDo">Clear Completed</button>
-    </div>
   </form>
   <script src="./todolist.js"></script>
 </body>

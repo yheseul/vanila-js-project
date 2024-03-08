@@ -1,49 +1,29 @@
-body{
-  font-family: arial;
-  margin: 150px auto;
-  width: 500px;
-  text-align: center;
-  padding: 30px;
+#toDoInput{
+  width: 200px;
 }
 #subject{
-  font-size: 40px;
+  font-size: 20px;
+  font-weight: bold;
 }
 #selectAll{
-  margin-top: 12px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-}
-#toDoInput{
-  width: 400px;
 }
 #addButton{
   cursor: pointer;
 }
+#DeleteButton{
+  cursor: pointer;
+}
+.todoCheckbox{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 6px;
+  margin-left: 0px;
+}
 #remainingDoBox{
-  float: left;
-}
-#remainingDoCount{
-  float: left;
-  margin-right: 2px;
-}
-#remainingDo{
-  float: left;
-}
-#everythingToDo{
-  float: center;
-  cursor: pointer;
-}
-#uncompletedToDo{
-  float: center;
-  margin-right: 2px;
-  cursor: pointer;
-}
-#completedToDo{
-  float: center;
-  margin-right: 2px;
-  cursor: pointer;
-}
-#DeleteCompletedToDo{
-  float: right;
-  margin-right: 2px;
-  cursor: pointer;
+  margin-top: 5px;
+  font-size: 17px;
 }
