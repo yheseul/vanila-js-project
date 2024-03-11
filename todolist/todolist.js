@@ -58,13 +58,9 @@ deleteToDoList = () => {
 
 selectAllCheckbox = (selectAll) => {
   const checkedboxes = $toDoList.querySelectorAll('input');
-  checkedboxes.forEach((checkbox) => {
-    checkbox.checked = selectAll.checked;
-  })
+  checkedboxes.forEach((checkbox) => checkbox.checked = selectAll.checked);
 }
 
 $addButton.addEventListener("click", addNewToDoList);
 $deleteButton.addEventListener("click", deleteToDoList);
-$selectAllCheckbox.addEventListener("click", () => {
-  selectAllCheckbox(selectAll);
-});
+$selectAllCheckbox.addEventListener("click", () => selectAllCheckbox(selectAll));
