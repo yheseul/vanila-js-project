@@ -13,15 +13,8 @@
 #addButton{
   cursor: pointer;
 }
-#DeleteButton{
+#deleteButton{
   cursor: pointer;
-}
-.todoCheckbox{
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  margin-right: 6px;
-  margin-left: 0px;
 }
 #remainingDoBox{
   margin-top: 5px;
