@@ -36,9 +36,9 @@ increaseCountRemainingToDo = () => {
   $remainingToDoCount.innerHTML = currentRemainingToDoCount + 1;
 }
 
-decreaseCountRemainingToDo = (numberDeletedToDo) => {
+decreaseCountRemainingToDo = () => {
   const currentRemainingToDoCount = parseInt($remainingToDoCount.innerHTML, 10);
-  $remainingToDoCount.innerHTML = currentRemainingToDoCount - numberDeletedToDo;
+  $remainingToDoCount.innerHTML = currentRemainingToDoCount - 1;
 }
 
 deleteToDoList = () => {
@@ -46,18 +46,30 @@ deleteToDoList = () => {
   const checkedboxes = $toDoList.querySelectorAll('input');
   let anyCheckboxChecked = false;
 
-  for (let i in toDolist) {
-    if (checkedboxes[i].checked) {
+  for (let index in toDolist) {
+    if (checkedboxes[index].checked) {
       anyCheckboxChecked = true;
-      toDolist[i].remove();
-      decreaseCountRemainingToDo(1);
+      toDolist[index].remove();
+      decreaseCountRemainingToDo();
     }
   }
 
-  if(!anyCheckboxChecked){
+  if(!anyCheckboxChecked) {
     alert("Please select the list you want to delete.");
   }
+
+  $selectAllCheckbox.checked = false;
+}
+
+selectAllCheckbox = (selectAll) => {
+  const checkedboxes = $toDoList.querySelectorAll('input');
+  checkedboxes.forEach((checkbox) => {
+    checkbox.checked = selectAll.checked;
+  })
 }
 
 $addButton.addEventListener("click", addNewToDoList);
 $deleteButton.addEventListener("click", deleteToDoList);
+$selectAllCheckbox.addEventListener("click", () => {
+  selectAllCheckbox(selectAll);
+});
