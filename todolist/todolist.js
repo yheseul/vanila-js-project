@@ -27,18 +27,13 @@ displayNewToDo = (liElement, toDoCheckbox, toDoText) => {
   if(toDoText) {
     liElement.append(toDoCheckbox, toDoText);
     $toDoList.appendChild(liElement);
-    increaseCountRemainingToDo();
+    updateCountRemainingToDo(1);
   }
 }
 
-increaseCountRemainingToDo = () => {
+updateCountRemainingToDo = (amount) => {
   const currentRemainingToDoCount = parseInt($remainingToDoCount.innerHTML, 10);
-  $remainingToDoCount.innerHTML = currentRemainingToDoCount + 1;
-}
-
-decreaseCountRemainingToDo = () => {
-  const currentRemainingToDoCount = parseInt($remainingToDoCount.innerHTML, 10);
-  $remainingToDoCount.innerHTML = currentRemainingToDoCount - 1;
+  $remainingToDoCount.innerHTML = currentRemainingToDoCount + amount;
 }
 
 deleteToDoList = () => {
@@ -50,7 +45,7 @@ deleteToDoList = () => {
     if (checkedboxes[index].checked) {
       anyCheckboxChecked = true;
       toDolist[index].remove();
-      decreaseCountRemainingToDo();
+      updateCountRemainingToDo(-1)
     }
   }
 
