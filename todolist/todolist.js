@@ -1,37 +1,39 @@
+const $selectAllCheckbox = document.getElementById('selectAll');
 const $toDoInput = document.getElementById('toDoInput');
 const $addButton = document.getElementById('addButton');
+const $deleteButton = document.getElementById('deleteButton');
 const $toDoList = document.getElementById('toDoList');
-const $remainingDoCount = document.getElementById('remainingDoCount');
+const $remainingToDoCount = document.getElementById('remainingToDoCount');
 
-addToDoList = (event) => {
+addNewToDoList = (event) => {
   event.preventDefault();
-  createToDoList();
+  createNewToDoElement();
   $toDoInput.value = "";
 }
 
-createToDoList = () => {
-  const liElement = document.createElement("li");
-  const newToDo = $toDoInput.value;
-  const todoCheckbox = document.createElement('input');
+createNewToDoElement = () => {
+  const liElement = document.createElement('li');
+  const toDoCheckbox = document.createElement('input');
+  const toDoText = $toDoInput.value;
 
   liElement.style.listStyle = "none";
-  todoCheckbox.setAttribute("type", "checkbox");
-  liElement.className = "newToDoList";
-  todoCheckbox.className = "todoCheckbox";
+  toDoCheckbox.setAttribute("type", "checkbox");
+  
+  displayNewToDo(liElement, toDoCheckbox, toDoText);
+}
 
-  if(!newToDo){
-    alert("Please enter the content!");
-  }
-  else{
-    liElement.append(todoCheckbox, newToDo);
+displayNewToDo = (liElement, toDoCheckbox, toDoText) => {
+  if(!toDoText) alert("Please enter the content!");
+  if(toDoText) {
+    liElement.append(toDoCheckbox, toDoText);
     $toDoList.appendChild(liElement);
-    increasedRemainingDoCount();
+    increasecountRemainingToDo();
   }
 }
 
-increasedRemainingDoCount = () => {
-  const CurrentRemainingDoCount = parseInt($remainingDoCount.innerHTML, 10);
-  $remainingDoCount.innerHTML = CurrentRemainingDoCount + 1;
+increasecountRemainingToDo = () => {
+  const currentRemainingToDoCount = parseInt($remainingToDoCount.innerHTML, 10);
+  $remainingToDoCount.innerHTML = currentRemainingToDoCount + 1;
 }
 
-$addButton.addEventListener('click', addToDoList);
+$addButton.addEventListener("click", addNewToDoList);
