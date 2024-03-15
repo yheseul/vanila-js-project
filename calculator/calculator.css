@@ -14,6 +14,16 @@ td {
   height: 100px;
   border: 1px solid black;
 }
+#calculationProcessWindow {
+  box-sizing: border-box;
+  width: 400px;
+  height: 30px;
+  border: 1px solid black;
+  border-bottom: none;
+  padding: 5px 5px 0 0;
+  text-align: right;
+  color: grey;
+}
 #result {
   text-align: right;
   padding-right: 5px;
