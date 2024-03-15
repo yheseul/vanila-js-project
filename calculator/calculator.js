@@ -1,12 +1,12 @@
 const $ = (id) => document.getElementById(id);
 const $number = document.querySelectorAll('.number');
-const $operation = document.querySelectorAll('.operation');
+const $operator = document.querySelectorAll('.operator');
 
 numberClickEvent = (event) => {
   $('result').innerText += event.target.innerText;
 }
 
-operationClickEvent = (event) => {
+operatorClickEvent = (event) => {
   $('result').innerText = event.target.innerText;
 }
 
@@ -16,8 +16,8 @@ $number.forEach((number) => {
   })
 })
 
-$operation.forEach((operation) => {
-  operation.addEventListener("click", (event) => {
-    operationClickEvent(event);
+$operation.forEach((operator) => {
+  operator.addEventListener("click", (event) => {
+    operatorClickEvent(event);
   })
 })
