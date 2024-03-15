@@ -14,6 +14,10 @@ td {
   height: 100px;
   border: 1px solid black;
 }
+#result {
+  text-align: right;
+  padding-right: 5px;
+}
 #allClear {
   background-color: pink;
 }
