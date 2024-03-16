@@ -30,6 +30,7 @@ td {
 }
 #allClear {
   background-color: pink;
+  cursor: pointer;
 }
 .number {
   background-color: rgb(180, 228, 246);
