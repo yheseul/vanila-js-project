@@ -60,6 +60,8 @@ calculationProcess = (clickedButton) => {
 calculationResult = (...string) => {
   const calculationResultValue =  new Function('return ' + string)();
   $('result').innerText = calculationResultValue;
+  $('calculationProcessWindow').innerText = calculationResultValue;
+  leftOperand = calculationResultValue;
 }
 
 allClearClickEvent = () => {
