@@ -28,7 +28,7 @@ createRightOperand = (clickedNumber) => {
 
 operatorClickEvent = (event) => {
   const clickedOperator = event.target.innerText;
-
+  
   switch(clickedOperator) {
     case ' = ':
       calculationResult(`${leftOperand}${operator}${rightOperand}`);
@@ -55,6 +55,11 @@ operatorClickEvent = (event) => {
 
 calculationProcess = (clickedButton) => {
   $('calculationProcessWindow').innerText += clickedButton;
+}
+
+calculationResult = (...string) => {
+  const calculationResultValue =  new Function('return ' + string)();
+  $('result').innerText = calculationResultValue;
 }
 
 $number.forEach((number) => {
