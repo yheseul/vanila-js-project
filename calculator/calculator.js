@@ -62,6 +62,10 @@ calculationResult = (...string) => {
   $('result').innerText = calculationResultValue;
 }
 
+allClearClickEvent = () => {
+  location.reload();
+}
+
 $number.forEach((number) => {
   number.addEventListener("click", (event) => {
     numberClickEvent(event);
@@ -73,3 +77,5 @@ $operator.forEach((operator) => {
     operatorClickEvent(event);
   })
 })
+
+$('allClear').addEventListener("click", allClearClickEvent);
