@@ -28,10 +28,29 @@ createRightOperand = (clickedNumber) => {
 
 operatorClickEvent = (event) => {
   const clickedOperator = event.target.innerText;
-  operator = clickedOperator;
-  if(clickedOperator === "=") calculationResult();
-  else calculationProcess(clickedOperator);
-  $('result').innerText = '';
+
+  switch(clickedOperator) {
+    case ' = ':
+      calculationResult(`${leftOperand}${operator}${rightOperand}`);
+      break;
+
+    case ' x ':
+      operator = '*';
+      calculationProcess(clickedOperator);
+      $('result').innerText = '';
+      break;
+
+    case ' ÷ ':
+      operator = '/';
+      calculationProcess(clickedOperator);
+      $('result').innerText = '';
+      break;
+
+    default:
+      operator = clickedOperator;
+      calculationProcess(clickedOperator);
+      $('result').innerText = '';
+  }
 }
 
 calculationProcess = (clickedButton) => {
